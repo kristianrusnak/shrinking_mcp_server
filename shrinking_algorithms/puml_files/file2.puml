@@ -1,0 +1,14 @@
+@startuml
+title Cycle Example
+
+class A
+class B
+class C
+class D
+
+A --> B
+B --> C
+C --> A
+C --> D
+
+@enduml

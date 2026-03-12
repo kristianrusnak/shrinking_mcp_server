@@ -1,0 +1,10 @@
+name: my-catalog
+displayName: shrinking algorithms
+registry:
+  shrinking-algorithm:
+    description: "Shrinks PlantUML diagrams using Kruskal's algorithm. Accepts the full .puml file content as a string and returns the shrunken diagram as a string."
+    title: "Shrinking algorithms"
+    type: server
+    image: shrinking-algorithm-mcp:latest
+    tools:
+      - name: shrink_diagram_by_kruskal

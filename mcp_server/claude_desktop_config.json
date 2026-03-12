@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "shrinking-algorithm": {
+      "command": "docker",
+      "args": [
+        "run",
+        "--rm",
+        "-i",
+        "shrinking-algorithm-mcp"
+      ]
+    }
+  }
+}

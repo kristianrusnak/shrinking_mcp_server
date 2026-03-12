@@ -1,0 +1,10 @@
+{
+  "weights": {
+    "dependency": 1,
+    " extension ": 3,
+    " implementation ": 3,
+    " aggregation ": 2,
+    " composition ": 2,
+    " association ": 1
+  }
+}

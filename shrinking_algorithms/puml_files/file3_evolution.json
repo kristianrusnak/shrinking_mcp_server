@@ -1,0 +1,95 @@
+{
+  "parsed": {
+    "classes": {
+      "A": {
+        "id": 0,
+        "attributes": [],
+        "methods": []
+      },
+      "B": {
+        "id": 1,
+        "attributes": [],
+        "methods": []
+      },
+      "C": {
+        "id": 2,
+        "attributes": [],
+        "methods": []
+      },
+      "D": {
+        "id": 3,
+        "attributes": [],
+        "methods": []
+      }
+    },
+    "edges": [
+      {
+        "source": "A",
+        "target": "B",
+        "relation": "dependency-right"
+      },
+      {
+        "source": "B",
+        "target": "C",
+        "relation": "association"
+      },
+      {
+        "source": "C",
+        "target": "A",
+        "relation": "implementation-right"
+      },
+      {
+        "source": "C",
+        "target": "D",
+        "relation": "aggregation-left"
+      }
+    ]
+  },
+  "reduced": {
+    "classes": {
+      "A": {
+        "id": 0,
+        "attributes": [],
+        "methods": []
+      },
+      "C": {
+        "id": 2,
+        "attributes": [],
+        "methods": []
+      },
+      "B": {
+        "id": 1,
+        "attributes": [],
+        "methods": []
+      },
+      "D": {
+        "id": 3,
+        "attributes": [],
+        "methods": []
+      }
+    },
+    "edges": [
+      {
+        "source": "A",
+        "target": "B",
+        "relation": "dependency-right"
+      },
+      {
+        "source": "B",
+        "target": "C",
+        "relation": "association"
+      },
+      {
+        "source": "C",
+        "target": "A",
+        "relation": "implementation-right"
+      },
+      {
+        "source": "C",
+        "target": "D",
+        "relation": "aggregation-left"
+      }
+    ]
+  },
+  "result_puml": "@startuml\ntitle Different Edge Types With Cycle\n\nclass A\nclass B\nclass C\nclass D\n\n'A lightweight chain (weight 1 edges)\nA --> B\nB -- C\n\n'A heavier edge that closes a cycle (weight 3)\nC ..> A\n\n'A medium-weight edge to a new node (weight 2)\nC o-- D\n\n@enduml"
+}

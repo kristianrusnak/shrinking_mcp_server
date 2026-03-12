@@ -1,0 +1,165 @@
+{
+  "parsed": {
+    "classes": {
+      "User": {
+        "id": 0,
+        "attributes": [
+          {
+            "name": "name",
+            "visibility": "public",
+            "datatype": "String"
+          },
+          {
+            "name": "email",
+            "visibility": "public",
+            "datatype": "String"
+          }
+        ],
+        "methods": [
+          {
+            "name": "login",
+            "visibility": "public",
+            "signature": "login()"
+          }
+        ]
+      },
+      "Account": {
+        "id": 1,
+        "attributes": [
+          {
+            "name": "accountNumber",
+            "visibility": "public",
+            "datatype": "String"
+          },
+          {
+            "name": "balance",
+            "visibility": "public",
+            "datatype": "Float"
+          }
+        ],
+        "methods": [
+          {
+            "name": "deposit",
+            "visibility": "public",
+            "signature": "deposit(amount: Float)"
+          },
+          {
+            "name": "withdraw",
+            "visibility": "public",
+            "signature": "withdraw(amount: Float)"
+          }
+        ]
+      },
+      "Transaction": {
+        "id": 2,
+        "attributes": [
+          {
+            "name": "id",
+            "visibility": "public",
+            "datatype": "String"
+          },
+          {
+            "name": "amount",
+            "visibility": "public",
+            "datatype": "Float"
+          },
+          {
+            "name": "date",
+            "visibility": "public",
+            "datatype": "Date"
+          }
+        ],
+        "methods": [
+          {
+            "name": "process",
+            "visibility": "public",
+            "signature": "process()"
+          }
+        ]
+      }
+    },
+    "edges": [
+      {
+        "source": "User",
+        "target": "Account",
+        "relation": "dependency-right"
+      },
+      {
+        "source": "Account",
+        "target": "Transaction",
+        "relation": "dependency-right"
+      },
+      {
+        "source": "Transaction",
+        "target": "User",
+        "relation": "dependency-right"
+      }
+    ]
+  },
+  "reduced": {
+    "classes": {
+      "User": {
+        "id": 0,
+        "attributes": [
+          {
+            "name": "name",
+            "visibility": "public",
+            "datatype": "String"
+          },
+          {
+            "name": "email",
+            "visibility": "public",
+            "datatype": "String"
+          }
+        ],
+        "methods": [
+          {
+            "name": "login",
+            "visibility": "public",
+            "signature": "login()"
+          }
+        ]
+      },
+      "Transaction": {
+        "id": 2,
+        "attributes": [
+          {
+            "name": "date",
+            "visibility": "public",
+            "datatype": "Date"
+          }
+        ],
+        "methods": [
+          {
+            "name": "process",
+            "visibility": "public",
+            "signature": "process()"
+          }
+        ]
+      },
+      "Account": {
+        "id": 1,
+        "attributes": [],
+        "methods": []
+      }
+    },
+    "edges": [
+      {
+        "source": "User",
+        "target": "Account",
+        "relation": "dependency-right"
+      },
+      {
+        "source": "Account",
+        "target": "Transaction",
+        "relation": "dependency-right"
+      },
+      {
+        "source": "Transaction",
+        "target": "User",
+        "relation": "dependency-right"
+      }
+    ]
+  },
+  "result_puml": "@startuml\ntitle Simple Banking System\n\nclass User {\n  +name: String\n  +email: String\n  +login()\n}\n\nclass Account {\n}\n\nclass Transaction {\n  +date: Date\n  +process()\n}\n\nUser \"1\" --> \"1..*\" Account\nAccount \"1\" --> \"0..*\" Transaction\nTransaction --> User\n\n@enduml"
+}

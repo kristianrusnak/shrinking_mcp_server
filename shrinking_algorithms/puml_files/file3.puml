@@ -1,0 +1,19 @@
+@startuml
+title Different Edge Types With Cycle
+
+class A
+class B
+class C
+class D
+
+'A lightweight chain (weight 1 edges)
+A --> B
+B -- C
+
+'A heavier edge that closes a cycle (weight 3)
+C ..> A
+
+'A medium-weight edge to a new node (weight 2)
+C o-- D
+
+@enduml

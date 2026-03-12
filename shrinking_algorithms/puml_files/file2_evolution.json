@@ -1,0 +1,95 @@
+{
+  "parsed": {
+    "classes": {
+      "A": {
+        "id": 0,
+        "attributes": [],
+        "methods": []
+      },
+      "B": {
+        "id": 1,
+        "attributes": [],
+        "methods": []
+      },
+      "C": {
+        "id": 2,
+        "attributes": [],
+        "methods": []
+      },
+      "D": {
+        "id": 3,
+        "attributes": [],
+        "methods": []
+      }
+    },
+    "edges": [
+      {
+        "source": "A",
+        "target": "B",
+        "relation": "dependency-right"
+      },
+      {
+        "source": "B",
+        "target": "C",
+        "relation": "dependency-right"
+      },
+      {
+        "source": "C",
+        "target": "A",
+        "relation": "dependency-right"
+      },
+      {
+        "source": "C",
+        "target": "D",
+        "relation": "dependency-right"
+      }
+    ]
+  },
+  "reduced": {
+    "classes": {
+      "A": {
+        "id": 0,
+        "attributes": [],
+        "methods": []
+      },
+      "D": {
+        "id": 3,
+        "attributes": [],
+        "methods": []
+      },
+      "B": {
+        "id": 1,
+        "attributes": [],
+        "methods": []
+      },
+      "C": {
+        "id": 2,
+        "attributes": [],
+        "methods": []
+      }
+    },
+    "edges": [
+      {
+        "source": "A",
+        "target": "B",
+        "relation": "dependency-right"
+      },
+      {
+        "source": "B",
+        "target": "C",
+        "relation": "dependency-right"
+      },
+      {
+        "source": "C",
+        "target": "A",
+        "relation": "dependency-right"
+      },
+      {
+        "source": "C",
+        "target": "D",
+        "relation": "dependency-right"
+      }
+    ]
+  },
+  "result_puml": "@startuml\ntitle Cycle Example\n\nclass A\nclass B\nclass C\nclass D\n\nA --> B\nB --> C\nC --> A\nC --> D\n\n@enduml"
+}

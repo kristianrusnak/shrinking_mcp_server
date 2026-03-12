@@ -1,0 +1,35 @@
+{
+
+  "class_names" : [
+    "abstract",
+    "abstract class",
+    "annotation",
+    "class",
+    "dataclass",
+    "entity",
+    "enum",
+    "exception",
+    "interface",
+    "metaclass",
+    "protocol",
+    "record",
+    "stereotype",
+    "struct"
+  ],
+
+  "relations": {
+    " --> ": "dependency-right",
+    " <-- ": "dependency-left",
+    " --|> ": "extension-right",
+    " <|-- ": "extension-left",
+    " ..> ": "implementation-right",
+    " <.. ": "implementation-left",
+    " --o ": "aggregation-right",
+    " o-- ": "aggregation-left",
+    " --* ": "composition-right",
+    " *-- ": "composition-left",
+    " -- ": "association",
+    " .. ": "association"
+  }
+
+}
